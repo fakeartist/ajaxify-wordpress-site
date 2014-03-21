@@ -66,6 +66,8 @@
 					$this	= $(this),
 					url		= $this.attr('href'),
 					title 	= $this.attr('title') || null;
+					
+				url = decodeURIComponent(url); // fix for non-latin characters
 
 				// Continue as normal for cmd clicks etc
 				if ( event.which == 2 || event.metaKey ) return true;
